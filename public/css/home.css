@@ -1,0 +1,334 @@
+/* .pre-loader{
+    width:100vw;
+    height: 100vh;
+    position: fixed;
+    background: white url('https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif') no-repeat center;
+    background: white url('/images/load.gif') no-repeat center;
+    background: white url('/images/486.gif') no-repeat center;
+    z-index:100;
+}
+.disappear{
+    animation: vanish 2s forwards;
+}
+@keyframes vanish{
+    100%{
+        opacity:1;
+        visibility: hidden;
+    }
+} */
+
+
+
+/**** navbar css *****/
+
+.navbar-container{
+    width:100vw;
+    height: 8.6vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: #766ab4; */
+    /* background-color: rgb(61, 192, 221); */
+    background-color:#6e6bbb;
+    position: sticky;
+    top:0px;
+    z-index: 4;
+}
+.site-name{
+    font-size: 1.7em;
+    margin-top: 2vh;
+    flex-grow: 2;
+    padding-left:10vw;
+    color:white;
+    letter-spacing: 4px;
+    font-family: 'Arapey', serif;
+    /* margin-bottom: 1vh; */
+}
+
+.right-nav{
+    /* flex-grow:2; */
+    margin-right:1vw;
+    margin-top: 2vh;
+}
+
+
+.nav-item{
+    color:white;
+    font-size: 1.3em;
+    font-family: 'STIX Two Math', serif;
+    display: inline-block;
+    margin-right:10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius:25px;
+    padding: 0.6vh 10px 0.6vh 10px;
+    /* background-color: #90acce; */
+}
+.nav-item:hover{
+    color:#756cba;
+    background-color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.bg-img{
+    margin-top: -0.3vh;
+    background-image: url("/Images/bgimage.jpeg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    margin-bottom: 15vh;
+    /* margin-left: 0vw; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}/**** heading css ****/
+.heading-container{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quote{
+   
+    font-size:45px;
+    color:#4430aa;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0vh;
+    letter-spacing: 1px;
+    font-family: 'Arapey', serif;
+    
+}
+
+.quote-line{
+    font-size: 16px;
+    line-height: 2;
+    color:black;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Mulish', sans-serif;
+    font-style: italic;
+    margin-bottom: 2vh;
+    text-decoration:underline;
+
+    
+}
+
+/*********** Typewriting Text ***************/
+
+.typewriter {
+    font-family: 'Arapey', serif;
+    /* font-family: Courier, monospace; */
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 5s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 43px;
+    font-weight: 700;
+    border-right: 4px solid black;
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: black; 
+    }
+}
+
+/**************Typewriting Ends ***************/
+
+
+.btn{ 
+    /* display: inline-block; */
+    /* margin-top:2vh; */
+    font-size: 25px;
+    border-radius:25px;
+    padding:1vh 1vw 6vh 1vw;
+    height:5vh;
+    text-align:center;
+    background-color: #116dff;
+    color: white;
+    font-family: 'STIX Two Math', serif;
+}
+
+.btn:hover{
+    background-color: white;
+    color:#116dff
+}
+
+
+.hr-tag{
+    width:70%;
+    text-align:center;
+    margin:0 15% 0 15%;
+    color: rgba(0, 0, 0, 0.272);
+    border-width:1px;
+    border-style: solid;
+}
+
+/* blog-container css */
+.blog-container{
+    margin-top:15vh;
+    margin-bottom: 15vh;
+    display:flex;
+    height:70vh;
+    width:100vw;
+    background-color:white;
+    justify-content:space-evenly;
+    /* align-items: center; */
+}
+
+.blog-image-container{
+    height:70vh; width:25vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+
+    width:30%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    /* margin-top: 25px; */
+      
+}
+
+.blog-image{
+    /* background-image: url("/images/blog-1.jpg"); */
+    background-size: cover;
+    /* margin-left:; */
+    margin:auto;
+    width: 250px;
+    height:250px;
+    /* text-align: center0; */
+
+
+}
+
+
+.blog-content{
+    width:25vw;
+    font-size: 30px;
+    /* padding:10px 10px 20px 10px; */
+    line-height: 2;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    margin:auto;
+}
+.hover-container{
+    position: relative;
+    top:30px;
+    width: 50%;
+    margin-left: 100px;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* blue portion which comes on hover */
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  
+  .hover-container:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+
+.language-content{
+    margin:3vh 0 3vh 0;
+    text-align: center;
+    font-size:25px;
+    font-family: 'Aclonica', sans-serif;
+}
+
+/********* Footer css ********/
+.footer{
+    margin-top: 15vh;
+    /* margin-top: 0.9vh; */
+    height:27vh;
+    /* background: linear-gradient(to right,#7477bd,#9aa7da, #8cc2ca); */
+    background-color: rgb(61, 192, 221);
+    background: linear-gradient(rgb(77, 177, 199), rgb(106, 189, 208), rgb(125, 187, 201));
+    display: flex;
+    justify-content: space-around;
+
+}
+.copyright-text{
+    width:30vw;
+    color:white;
+    margin:auto;
+    /* text-align: center; */
+}
+.contact-us{
+    width:50vh;
+    color: white;
+    margin:auto;
+    letter-spacing: 2px;
+    
+}
+
+.fa {
+    padding: 10px;
+    font-size: 15px;
+    /* width: 15px; */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: white;
+    color: #6468ad;
+    text-decoration: none;
+  }
+.fa:hover{
+    background: rgb(40, 236, 141);
+    text-decoration: none;
+    /* color:rgb(194, 43, 248); */
+    color: white;
+    /* color:rgb(10, 152, 22); */
+}
+

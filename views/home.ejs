@@ -1,0 +1,147 @@
+<%- include("partials/header") -%>
+
+    <div class="body-container">
+        <div class="bg-img">
+
+            <!-------------- Heading Section Starts --------------->
+            <div class="heading-container">
+                <div class="quote">
+                    <div class="typewriter">
+                        <div class="typewriter-text">Welcome to .MyBlog!</div>
+
+                    </div>
+                </div>
+
+                <h4>
+                    <div class="typewrite quote-line" data-period="2000" data-type='[ "Hey there...", "Cant wait to write something??", "Wants to add a blog??" ]'>
+                        <span class="wrap"></span>
+                    </div>
+                </h4>
+                
+                <a style="text-decoration: none" class="btn" href="/homePage">Let's Start</a>
+            </div>
+        </div>
+        <hr class="hr-tag">
+        <!--------------- Heading section Ends --------------->
+
+
+        <!------------- Blog Container Starts---------------->
+        <div class="blog-container">
+            <div class="blog-image-container">
+                <div class="hover-container">
+                    <img src="/Images/blog-1.jpg" alt="" class="blog-image">
+                    <div class="overlay">
+                        <div class="text">
+                            Mark Taiwan
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    “Age is an issue of mind over matter. If you don’t mind, it doesn’t matter.”
+                </div>
+            </div>
+
+            <div class="blog-image-container">
+                <div class="hover-container">
+                    <img src="/Images/blog-2.jpg" alt="" class="blog-image">
+                    <div class="overlay">
+                        <div class="text">
+                            W. Clement Stone
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    “Aim for the moon. If you miss, you may hit a star.”
+                </div>
+            </div>
+
+            <div class="blog-image-container">
+                <div class="hover-container">
+                    <img src="/Images/blog-3.png" alt="" class="blog-image">
+                    <div class="overlay">
+                        <div class="text">
+                            Buddha
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    “The only real failure in life is not to be true to the best one knows.”
+                </div>
+            </div>
+        </div>
+        <!------------- Blog Container Ends -------------->
+
+
+        <hr class="hr-tag">
+        <div class="language-content">
+            .MyBlog
+        </div>
+        <hr class="hr-tag">
+        <br><br>
+    </div>
+    <script>
+        // var load_var = document.querySelector(".pre-loader");
+        // window.addEventListener("load", vanish_func);
+        // function vanish_func() {
+        //     load_var.classList.add("disappear");
+        // }
+
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+
+    </script>
+    <%- include("partials/footer") -%>
